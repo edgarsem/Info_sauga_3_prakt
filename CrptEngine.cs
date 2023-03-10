@@ -18,10 +18,21 @@ namespace _1_prakt
         }
 
 
-        static DESCryptoServiceProvider AlgorithmInstance()
+        static DESCryptoServiceProvider AlgorithmInstance(int mode)
         {
             DESCryptoServiceProvider DES = new DESCryptoServiceProvider();
-            DES.Mode = CipherMode.CBC;
+            switch (mode)
+            {
+                case 0:
+                    DES.Mode = CipherMode.ECB;
+                    break;
+                case 1:
+                    DES.Mode = CipherMode.CBC;
+                    break;
+                case 2:
+                    DES.Mode = CipherMode.CFB;
+                    break;
+            }
             DES.Padding = PaddingMode.PKCS7;
             return DES;
         }
@@ -31,14 +42,14 @@ namespace _1_prakt
             return Encoding.UTF8.GetBytes(text);
         }
 
-        public static string Encryption(string text, string key, string iv)
-        { 
-            var encryptor = AlgorithmInstance().CreateEncryptor(StringToByte(key), StringToByte(iv));
+        public static string Encryption(string text, string key, string iv, int mode)
+        {
+            var encryptor = AlgorithmInstance(mode).CreateEncryptor(StringToByte(key), StringToByte(iv));
             return Convert.ToBase64String(encryptor.TransformFinalBlock(Encoding.Unicode.GetBytes(text), 0, Encoding.Unicode.GetBytes(text).Length));
         }
-        public static string Decryption(string text, string key, string iv)
+        public static string Decryption(string text, string key, string iv, int mode)
         {
-            var decryptor = AlgorithmInstance().CreateDecryptor(StringToByte(key), StringToByte(iv));
+            var decryptor = AlgorithmInstance(mode).CreateDecryptor(StringToByte(key), StringToByte(iv));
             return Encoding.Unicode.GetString(decryptor.TransformFinalBlock(Convert.FromBase64String(text), 0, Convert.FromBase64String(text).Length));
         }
 

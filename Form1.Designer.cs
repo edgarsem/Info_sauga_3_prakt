@@ -48,12 +48,14 @@
             this.decryptionComplete = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.wrongFormatLabel = new System.Windows.Forms.Label();
+            this.encryptionModeBox = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // EncryptButton
             // 
-            this.EncryptButton.Location = new System.Drawing.Point(40, 463);
+            this.EncryptButton.Location = new System.Drawing.Point(39, 471);
             this.EncryptButton.Name = "EncryptButton";
             this.EncryptButton.Size = new System.Drawing.Size(101, 41);
             this.EncryptButton.TabIndex = 0;
@@ -69,7 +71,7 @@
             // textBox
             // 
             this.textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox.Location = new System.Drawing.Point(40, 60);
+            this.textBox.Location = new System.Drawing.Point(39, 43);
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
             this.textBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -80,7 +82,7 @@
             // keyBox
             // 
             this.keyBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.keyBox.Location = new System.Drawing.Point(40, 421);
+            this.keyBox.Location = new System.Drawing.Point(40, 438);
             this.keyBox.Name = "keyBox";
             this.keyBox.Size = new System.Drawing.Size(739, 27);
             this.keyBox.TabIndex = 2;
@@ -98,7 +100,7 @@
             // 
             // DecipherButton
             // 
-            this.DecipherButton.Location = new System.Drawing.Point(178, 463);
+            this.DecipherButton.Location = new System.Drawing.Point(178, 471);
             this.DecipherButton.Name = "DecipherButton";
             this.DecipherButton.Size = new System.Drawing.Size(101, 41);
             this.DecipherButton.TabIndex = 4;
@@ -110,7 +112,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(37, 37);
+            this.label1.Location = new System.Drawing.Point(36, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 20);
             this.label1.TabIndex = 5;
@@ -121,7 +123,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(37, 398);
+            this.label2.Location = new System.Drawing.Point(37, 415);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 20);
             this.label2.TabIndex = 6;
@@ -132,7 +134,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(36, 518);
+            this.label3.Location = new System.Drawing.Point(36, 526);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 20);
             this.label3.TabIndex = 7;
@@ -161,7 +163,7 @@
             // 
             // openButton
             // 
-            this.openButton.Location = new System.Drawing.Point(41, 278);
+            this.openButton.Location = new System.Drawing.Point(39, 259);
             this.openButton.Name = "openButton";
             this.openButton.Size = new System.Drawing.Size(101, 41);
             this.openButton.TabIndex = 10;
@@ -173,7 +175,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(37, 332);
+            this.label4.Location = new System.Drawing.Point(38, 362);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 20);
             this.label4.TabIndex = 11;
@@ -183,7 +185,7 @@
             // IVBox
             // 
             this.IVBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IVBox.Location = new System.Drawing.Point(40, 355);
+            this.IVBox.Location = new System.Drawing.Point(41, 385);
             this.IVBox.Name = "IVBox";
             this.IVBox.Size = new System.Drawing.Size(739, 27);
             this.IVBox.TabIndex = 12;
@@ -192,7 +194,7 @@
             // 
             this.keyWarningLabel.AutoSize = true;
             this.keyWarningLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.keyWarningLabel.Location = new System.Drawing.Point(333, 484);
+            this.keyWarningLabel.Location = new System.Drawing.Point(333, 492);
             this.keyWarningLabel.Name = "keyWarningLabel";
             this.keyWarningLabel.Size = new System.Drawing.Size(384, 20);
             this.keyWarningLabel.TabIndex = 13;
@@ -204,7 +206,7 @@
             // 
             this.IVWarningLabel.AutoSize = true;
             this.IVWarningLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IVWarningLabel.Location = new System.Drawing.Point(333, 463);
+            this.IVWarningLabel.Location = new System.Drawing.Point(333, 471);
             this.IVWarningLabel.Name = "IVWarningLabel";
             this.IVWarningLabel.Size = new System.Drawing.Size(371, 20);
             this.IVWarningLabel.TabIndex = 14;
@@ -255,11 +257,37 @@
     ", \r\nor you are using wrong key or iv.\r\n";
             this.wrongFormatLabel.Visible = false;
             // 
+            // encryptionModeBox
+            // 
+            this.encryptionModeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.encryptionModeBox.FormattingEnabled = true;
+            this.encryptionModeBox.Items.AddRange(new object[] {
+            "ECB",
+            "CBC",
+            "CFB"});
+            this.encryptionModeBox.Location = new System.Drawing.Point(40, 335);
+            this.encryptionModeBox.Name = "encryptionModeBox";
+            this.encryptionModeBox.Size = new System.Drawing.Size(137, 24);
+            this.encryptionModeBox.TabIndex = 19;
+            this.encryptionModeBox.SelectedIndexChanged += new System.EventHandler(this.encryptionModeBox_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(38, 312);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(139, 20);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Encryption mode:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(820, 834);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.encryptionModeBox);
             this.Controls.Add(this.wrongFormatLabel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.decryptionComplete);
@@ -280,7 +308,7 @@
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.EncryptButton);
             this.Name = "Form1";
-            this.Text = "DES algorithm, CBC mode";
+            this.Text = "DES algorithm";
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -309,6 +337,8 @@
         private System.Windows.Forms.Label encryptionComplete;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label wrongFormatLabel;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox encryptionModeBox;
     }
 }
 

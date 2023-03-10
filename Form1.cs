@@ -17,6 +17,7 @@ namespace _1_prakt
         public Form1()
         {
             InitializeComponent();
+            encryptionModeBox.SelectedIndex = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -39,7 +40,7 @@ namespace _1_prakt
 
             if (check)
             {
-                resultBox.Text = CrptEngine.Encryption(textBox.Text, keyBox.Text, IVBox.Text);
+                resultBox.Text = CrptEngine.Encryption(textBox.Text, keyBox.Text, IVBox.Text, encryptionModeBox.SelectedIndex);
                 wrongFormatLabel.Hide();
                 decryptionComplete.Hide();
                 encryptionComplete.Show();
@@ -69,7 +70,7 @@ namespace _1_prakt
             {
                 try
                 {
-                    resultBox.Text = CrptEngine.Decryption(textBox.Text, keyBox.Text, IVBox.Text);
+                    resultBox.Text = CrptEngine.Decryption(textBox.Text, keyBox.Text, IVBox.Text, encryptionModeBox.SelectedIndex);
                     encryptionComplete.Hide();
                     decryptionComplete.Show();
                     wrongFormatLabel.Hide();
@@ -108,6 +109,7 @@ namespace _1_prakt
 
         private void clearButton_Click(object sender, EventArgs e)
         {
+            encryptionModeBox.SelectedIndex = 0;
             keyWarningLabel.Hide();
             IVWarningLabel.Hide();
             encryptionComplete.Hide();
@@ -163,6 +165,11 @@ namespace _1_prakt
         }
 
         private void keyWarningLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void encryptionModeBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
