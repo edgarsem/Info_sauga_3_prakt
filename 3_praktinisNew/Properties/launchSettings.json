@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "3_praktinisNew": {
+      "commandName": "Project"
+    },
+    "Profile 1": {
+      "commandName": "Executable"
+    }
+  }
+}
